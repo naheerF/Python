@@ -1,0 +1,8 @@
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s_temp=[temp.lower() for temp in s if temp.isalnum()] 
+        return s_temp == s_temp[::-1]
