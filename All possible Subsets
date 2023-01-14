@@ -1,0 +1,11 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def dfs(nums, index, ans, cur):            
+            if index == len(nums):  
+                ans.append(cur)
+            else:
+                dfs(nums, index+1, ans, cur+[nums[index]])
+                dfs(nums, index+1, ans, cur)
+        ans = []
+        dfs(nums, 0, ans, [])
+        return ans
