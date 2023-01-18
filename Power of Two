@@ -1,0 +1,12 @@
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        p = 0
+        temp = 0
+        while temp <= n:
+            temp = math.pow(2, p)
+            if temp == n:
+                return True
+            elif temp > n:
+                return False
+            p+=1
+            
