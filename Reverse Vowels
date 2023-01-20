@@ -1,0 +1,16 @@
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        t=ans=""
+        v={'a','e','i','o','u','A','E','I','O','U'}
+        for i in s:
+            if i in v:
+                t+=i
+        t=t[-1::-1]
+        j=0
+        for i in s:
+            if i in v:
+                ans+=t[j]
+                j+=1
+            else:
+                ans+=i
+        return ans
