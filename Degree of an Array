@@ -1,0 +1,11 @@
+class Solution:
+    def findShortestSubArray(self, nums):
+        d = defaultdict(list)
+        for i,x in enumerate(nums):
+            d[x].append(i)
+        m = max([ len(v) for v in d.values() ])
+        opt = len(nums)
+        for c in d.values():
+            if len(c)==m:
+                opt = min(opt,c[-1]-c[0]+1)
+        return opt
